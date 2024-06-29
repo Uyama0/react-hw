@@ -1,0 +1,63 @@
+/* need fix, width out of screnn */
+
+.film {
+  padding: var(--padding-md);
+  border-radius: var(--radius);
+  display: flex;
+  gap: var(--gap-md);
+  background-color: var(--white-primary);
+  cursor: pointer;
+  width: 100%;
+}
+
+.film_poster {
+  width: 100px;
+  height: 120px;
+  border-radius: var(--radius);
+  background-size: cover;
+}
+
+.film_title {
+  font-family: "Roboto" sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.film_details_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.film_details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.film_details_container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.film_details_descrition {
+  font-family: "Roboto" sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: var(--text-foreground);
+  white-space: nowrap;
+}
+
+.film_details_info {
+  font-family: "Roboto" sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: var(--text-primary);
+}
