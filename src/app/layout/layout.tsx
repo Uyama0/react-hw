@@ -17,7 +17,7 @@ export const Layout = () => {
   }, []);
 
   return (
-    <main style={{ height: "89vh" }}>
+    <main style={{ height: "100%" }}>
       <Header />
       <AppRouter />
     </main>
