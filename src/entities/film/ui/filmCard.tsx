@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 
+import { StarRating } from "features/starRating";
 import { TFullMovieInfo } from "shared/types";
 
 import styles from "./styles.module.css";
@@ -30,6 +31,9 @@ export const FilmCard: FC<TFullMovieInfo> = ({
             <span className={styles.film_details_info}>{description}</span>
           </div>
         </div>
+      </div>
+      <div>
+        <StarRating id={id} />
       </div>
     </Link>
   );

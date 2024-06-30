@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import authReducer from "features/authForm/model/slice";
+import ratingsReducer from "features/starRating/model/slice";
 import searchParamsReducer from "shared/lib/store/searchParamsSlice";
 import { cinemaApi } from "shared/api";
 
@@ -8,6 +9,7 @@ export const store = configureStore({
   reducer: {
     auth: authReducer,
     searchParams: searchParamsReducer,
+    ratings: ratingsReducer,
     [cinemaApi.reducerPath]: cinemaApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

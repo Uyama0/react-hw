@@ -1,0 +1,22 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--gray-primary);
+  padding: 24px 32px;
+  z-index: 10;
+}
+
+.header_title {
+  color: var(--white-primary);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 37.5px;
+  text-align: left;
+}
+
+.header_login_container {
+  display: flex;
+  gap: 16px;
+}

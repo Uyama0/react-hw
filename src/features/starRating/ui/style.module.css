@@ -1,0 +1,36 @@
+.star_rating {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.star {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.star_onclick:hover {
+  transform: scale(1.1);
+  fill: #ff5500;
+}
+
+.star_icon {
+  width: 24px;
+  height: 24px;
+  fill: transparent;
+}
+
+.star_icon_active {
+  fill: #ff5500;
+}
+
+.star_rating_number {
+  margin-top: 8px;
+  color: #ababab;
+}
+
+.star_rating_number_active {
+  color: black;
+}

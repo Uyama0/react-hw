@@ -1,0 +1,15 @@
+.sidebar_container {
+  width: 408px;
+  padding: var(--padding-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--white-primary);
+  border-radius: var(--radius);
+}
+
+.sidebar_filters {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

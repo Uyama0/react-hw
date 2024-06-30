@@ -1,6 +1,13 @@
 .page_wrapper {
-  margin: 20px 32px;
+  padding: 20px 32px 74px;
   display: flex;
   flex-direction: column;
   gap: var(--gap-md);
+}
+
+.loading_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }

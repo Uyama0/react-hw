@@ -1,0 +1,1 @@
+export { cinemaApi } from "./apiSlice";

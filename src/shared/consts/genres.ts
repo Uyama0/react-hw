@@ -1,0 +1,15 @@
+export const GENRES_MAP = {
+  "0": "Не выбран",
+  comedy: "комедия",
+  drama: "драма",
+  action: "боевик",
+  thriller: "триллер",
+  horror: "ужасы",
+  family: "семейный",
+  cartoon: "анимированный",
+  fantasy: "фэнтези",
+  romance: "романтика",
+  adventure: "приключения",
+  musical: "мьюзикл",
+  war: "военный",
+} as const;

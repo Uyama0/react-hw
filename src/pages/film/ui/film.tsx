@@ -1,16 +1,22 @@
 import { useParams } from "react-router-dom";
 
+import { ActorsList } from "widgets/actorsList/ui/actorsList";
 import { FilmDetail } from "entities/filmDetail";
 import { useGetFilmQuery } from "shared/api/apiSlice";
+import { LoaderIcon } from "shared/assets/icons/loaderIcon";
 
 import styles from "./styles.module.css";
-import { ActorsList } from "widgets/actorsList/ui/actorsList";
 
 export const Film = () => {
-  const { id } = useParams();
-  const { data, isLoading } = useGetFilmQuery(id);
+  const { id } = useParams<{ id: string }>();
+  const { data, isLoading } = useGetFilmQuery(id!);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div className={styles.loading_container}>
+        <LoaderIcon />
+      </div>
+    );
 
   if (!data) return <div>No data</div>;
 

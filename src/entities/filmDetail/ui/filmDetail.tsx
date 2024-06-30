@@ -1,10 +1,12 @@
 import { FC } from "react";
 
 import { TFullMovieInfo } from "shared/types";
+import { StarRating } from "features/starRating";
 
 import styles from "./styles.module.css";
 
 export const FilmDetail: FC<TFullMovieInfo> = ({
+  id,
   poster,
   title,
   genre,
@@ -18,7 +20,7 @@ export const FilmDetail: FC<TFullMovieInfo> = ({
       <div className={styles.film_info_container}>
         <div className={styles.film_info_header}>
           <h1 className={styles.film_info_title}>{title}</h1>
-          <div>rating</div>
+          <StarRating id={id} />
         </div>
         <div className={styles.film_info}>
           <div className={styles.film_info_row}>

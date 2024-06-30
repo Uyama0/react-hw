@@ -1,0 +1,37 @@
+.films_list_container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loader_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.empty_container h1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  color: #1b1f23;
+}
+
+.empty_container p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #999fa6;
+}

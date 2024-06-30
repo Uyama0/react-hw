@@ -1,0 +1,10 @@
+.input {
+  width: 400px;
+  background-color: var(--white-primary);
+  cursor: pointer;
+  border: 1px solid #ced2d6;
+}
+
+.input:focus {
+  border: 1px solid var(--orange-primary);
+}

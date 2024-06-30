@@ -1,14 +1,12 @@
 import { Provider } from "react-redux";
 
-import { AppRouter } from "./routers";
-import { Header } from "widgets/header";
+import { Layout } from "./layout";
 import { store } from "./store";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <AppRouter />
+      <Layout />
     </Provider>
   );
 };

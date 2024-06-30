@@ -4,10 +4,10 @@ import { createPortal } from "react-dom";
 import { initialState, authReducer } from "../model";
 import { Button } from "shared/ui/button";
 import { Input } from "shared/ui/input";
+import { CloseIcon } from "shared/assets/icons/closeIcon";
 
 import styles from "./styles.module.css";
 
-import close from "../../../../assets/close.png";
 import { useAuthForm } from "../lib/useAuthForm";
 
 interface IAuthForm {
@@ -40,7 +40,7 @@ export const AuthForm: FC<IAuthForm> = ({ onClose }) => {
         <div className={styles.form_title}>
           <h1>Авторизация</h1>
           <Button variant="close" onClick={onClose}>
-            <img src={close} alt="My Image" width="10" height="10" />
+            <CloseIcon />
           </Button>
         </div>
         <div className={styles.form_input_group}>
