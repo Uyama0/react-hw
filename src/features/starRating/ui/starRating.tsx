@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 
 import { StarIcon } from "shared/assets/icons/starIcon";
 import { useAppSelector } from "shared/lib/store";
@@ -10,7 +10,7 @@ import styles from "./style.module.css";
 interface IStarRating {
   id: string;
   disabled?: boolean;
-  handleUpdate: () => void;
+  handleUpdate?: () => void;
 }
 
 export const StarRating: FC<IStarRating> = ({
@@ -19,6 +19,7 @@ export const StarRating: FC<IStarRating> = ({
   handleUpdate,
 }) => {
   const { userRating, handleStarClick } = useStarRating(id, disabled);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const isLogged = useAppSelector((state) => state.auth.isLogged);
 
@@ -27,7 +28,19 @@ export const StarRating: FC<IStarRating> = ({
     rating: number
   ) => {
     handleStarClick(e, rating);
-    handleUpdate();
+    if (handleUpdate) {
+      handleUpdate();
+    }
+  };
+
+  const handleStarMouseEnter = (index: number) => {
+    if (!disabled) {
+      setHoveredIndex(index);
+    }
+  };
+
+  const handleStarMouseLeave = () => {
+    setHoveredIndex(null);
   };
 
   if (!isLogged) return null;
@@ -39,12 +52,21 @@ export const StarRating: FC<IStarRating> = ({
           key={index}
           className={`${styles.star} ${!disabled ? styles.star_onclick : ""}`}
           onClick={(e) => handleClick(e, rating)}
+          onMouseEnter={() => handleStarMouseEnter(index)}
+          onMouseLeave={handleStarMouseLeave}
         >
           <StarIcon
             className={`${styles.star_icon} ${
-              userRating >= rating ? styles.star_icon_active : ""
+              userRating >= rating ||
+              (hoveredIndex !== null && index >= hoveredIndex)
+                ? styles.star_icon_hovered
+                : ""
             }`}
-            filled={userRating >= rating}
+            filled={
+              userRating >= rating ||
+              (hoveredIndex !== null && index >= hoveredIndex)
+            }
+            hovered={hoveredIndex !== null && index >= hoveredIndex}
           />
           <span
             className={`${styles.star_rating_number} ${

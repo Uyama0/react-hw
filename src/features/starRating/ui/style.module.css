@@ -13,17 +13,12 @@
 
 .star_onclick:hover {
   transform: scale(1.1);
-  fill: #ff5500;
 }
 
 .star_icon {
   width: 24px;
   height: 24px;
   fill: transparent;
-}
-
-.star_icon_active {
-  fill: #ff5500;
 }
 
 .star_rating_number {
