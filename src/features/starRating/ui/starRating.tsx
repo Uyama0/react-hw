@@ -10,12 +10,25 @@ import styles from "./style.module.css";
 interface IStarRating {
   id: string;
   disabled?: boolean;
+  handleUpdate: () => void;
 }
 
-export const StarRating: FC<IStarRating> = ({ id, disabled = false }) => {
+export const StarRating: FC<IStarRating> = ({
+  id,
+  disabled = false,
+  handleUpdate,
+}) => {
   const { userRating, handleStarClick } = useStarRating(id, disabled);
 
   const isLogged = useAppSelector((state) => state.auth.isLogged);
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    rating: number
+  ) => {
+    handleStarClick(e, rating);
+    handleUpdate();
+  };
 
   if (!isLogged) return null;
 
@@ -25,7 +38,7 @@ export const StarRating: FC<IStarRating> = ({ id, disabled = false }) => {
         <div
           key={index}
           className={`${styles.star} ${!disabled ? styles.star_onclick : ""}`}
-          onClick={(e) => handleStarClick(e, rating)}
+          onClick={(e) => handleClick(e, rating)}
         >
           <StarIcon
             className={`${styles.star_icon} ${

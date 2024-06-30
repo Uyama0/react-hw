@@ -1,5 +1,5 @@
 export { type TActor } from "./movie";
-export { type TFullMovieInfo } from "./movie";
+export { type IFullMovieInfo } from "./movie";
 
 export { type IGetFilms } from "./search";
 export { type ISearchFilms } from "./search";

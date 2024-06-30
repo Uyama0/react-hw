@@ -1,11 +1,15 @@
 import { FC } from "react";
 
-import { TFullMovieInfo } from "shared/types";
+import { IFullMovieInfo } from "shared/types";
 import { StarRating } from "features/starRating";
 
 import styles from "./styles.module.css";
 
-export const FilmDetail: FC<TFullMovieInfo> = ({
+interface IFilmDetail extends IFullMovieInfo {
+  handleUpdate: () => void;
+}
+
+export const FilmDetail: FC<IFilmDetail> = ({
   id,
   poster,
   title,
@@ -13,6 +17,7 @@ export const FilmDetail: FC<TFullMovieInfo> = ({
   release_year,
   rating,
   description,
+  handleUpdate,
 }) => {
   return (
     <article className={styles.film_wrapper}>
@@ -20,7 +25,7 @@ export const FilmDetail: FC<TFullMovieInfo> = ({
       <div className={styles.film_info_container}>
         <div className={styles.film_info_header}>
           <h1 className={styles.film_info_title}>{title}</h1>
-          <StarRating id={id} />
+          <StarRating id={id} handleUpdate={handleUpdate} />
         </div>
         <div className={styles.film_info}>
           <div className={styles.film_info_row}>

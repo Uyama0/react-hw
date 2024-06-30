@@ -9,7 +9,11 @@ import styles from "./styles.module.css";
 
 export const Film = () => {
   const { id } = useParams<{ id: string }>();
-  const { data, isLoading } = useGetFilmQuery(id!);
+  const { data, isLoading, refetch } = useGetFilmQuery(id!);
+
+  const handleUpdate = () => {
+    refetch();
+  };
 
   if (isLoading)
     return (
@@ -22,7 +26,7 @@ export const Film = () => {
 
   return (
     <main className={styles.page_wrapper}>
-      <FilmDetail {...data} />
+      <FilmDetail {...data} handleUpdate={handleUpdate} />
       <ActorsList actors={data.actors} />
     </main>
   );

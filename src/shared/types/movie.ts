@@ -3,7 +3,7 @@ export type TActor = {
   photo: string; // base64 img
 };
 
-export type TFullMovieInfo = {
+export type IFullMovieInfo = {
   id: string;
   title: string;
   description: string;
