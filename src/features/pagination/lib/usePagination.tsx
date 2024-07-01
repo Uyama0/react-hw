@@ -9,7 +9,6 @@ export const usePagination = (total_pages: number = 1) => {
   const [page, setPage] = useState<number>(
     Number(searchParams.get("page")) || 1
   );
-  console.log(page);
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
