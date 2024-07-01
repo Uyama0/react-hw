@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { useAppDispatch } from "shared/lib/store";
 import { useLazyLoginQuery } from "shared/api/apiSlice";
-import { setLogged } from "../model/slice";
+import { setLogged, setToken } from "../model/slice";
 
 export const useAuthForm = () => {
   const [login] = useLazyLoginQuery();
@@ -23,6 +23,7 @@ export const useAuthForm = () => {
       if (response.data && response.data.token) {
         localStorage.setItem("token", response.data.token);
         appDispatch(setLogged(true));
+        appDispatch(setToken(response.data.token));
         setError(false);
       }
     } catch (error) {
