@@ -23,13 +23,16 @@ export const StarRating: FC<IStarRating> = ({
 
   const isLogged = useAppSelector((state) => state.auth.isLogged);
 
-  const handleClick = (
+  const handleClick = async (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     rating: number
   ) => {
     handleStarClick(e, rating);
+
     if (handleUpdate) {
-      handleUpdate();
+      setTimeout(() => {
+        handleUpdate();
+      }, 1000);
     }
   };
 
